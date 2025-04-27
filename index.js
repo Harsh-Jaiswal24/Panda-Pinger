@@ -19,7 +19,7 @@ const PING_INTERVAL_MINUTES = 14;
 const PING_INTERVAL_MS = PING_INTERVAL_MINUTES * 60 * 1000;
 const BACKEND_TIMEOUT_MS = 60 * 1000;
 
-app.get("/health", (req, res) => res.status(200).send("OK"));
+app.get("/", (req, res) => res.status(200).send("OK"));
 
 const pingBackend = async (url) => {
     try {
@@ -48,10 +48,6 @@ const pingAllBackends = async () => {
 pingAllBackends().then(() => {
     setInterval(pingAllBackends, PING_INTERVAL_MS);
     console.log(`Service active. Pinging every ${PING_INTERVAL_MINUTES} minutes`);
-});
-
-app.get("/",(req,res)=>{
-    res.status(200).send("ok")
 });
 
 process.on('SIGINT', () => {
