@@ -1,0 +1,15 @@
+{
+  "name": "backend-render-agent",
+  "version": "1.0.0",
+  "description": "This is a agent to keep backend active",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harsh Jaiswal",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "express": "^5.1.0"
+  }
+}
