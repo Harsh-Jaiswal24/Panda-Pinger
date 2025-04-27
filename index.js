@@ -50,6 +50,10 @@ pingAllBackends().then(() => {
     console.log(`Service active. Pinging every ${PING_INTERVAL_MINUTES} minutes`);
 });
 
+app.get("/",(req,res)=>{
+    res.status(200).send("ok")
+});
+
 process.on('SIGINT', () => {
     console.log('Shutting down gracefully');
     process.exit(0);
